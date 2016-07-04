@@ -45,7 +45,7 @@ module Ruboty module Adapters
 				Ruboty.logger.info "======= LINE access ======="
 				Ruboty.logger.debug "env : #{env}"
 
-				request = Line::Bot::Receive::Request.new(env)
+				request = ::Line::Bot::Receive::Request.new(env)
 				result = on_post request
 
 				[200, {"Content-Type" => "text/plain"}, [result]]
@@ -62,7 +62,7 @@ module Ruboty module Adapters
 
 			req.data.each { |message|
 				case message.content
-				when Line::Bot::Message::Text
+				when ::Line::Bot::Message::Text
 					on_message message
 				end
 			}
