@@ -7,6 +7,7 @@ module Line
       def post(url, payload, header = {})
 		Ruboty.logger.debug "======= HTTPClient#post ======="
 		Rubogy.logger.debug "payload #{payload}"
+		Rubogy.logger.debug "FIXIT_URL #{ENV["RUBOTY_FIXIE_URL"]}"
         RestClient.proxy = ENV["RUBOTY_FIXIE_URL"] if ENV["RUBOTY_FIXIE_URL"]
         RestClient.post(url, payload, header)
       end
