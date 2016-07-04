@@ -6,7 +6,7 @@ LINE adapter for Ruboty.
 
 ```ruby
 # Gemfile
-gem "ruboty-lien"
+gem "ruboty-line"
 ```
 
 ## ENV
