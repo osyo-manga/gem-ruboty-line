@@ -1,5 +1,6 @@
 require "rack"
 require 'line/bot'
+require 'rest-client'
 
 module Line
   module Bot
