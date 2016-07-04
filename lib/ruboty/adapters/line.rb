@@ -85,9 +85,9 @@ module Ruboty module Adapters
 
 		def client
 			@client ||= ::Line::Bot::Client.new { |config|
-				config.channel_id     = ENV["RUBOTY_LINE_CHANNEL_ID"]     || ENV["LINE_CHANNEL_ID"]
-				config.channel_secret = ENV["RUBOTY_LINE_CHANNEL_SECRET"] || ENV["LINE_CHANNEL_SECRET"]
-				config.channel_mid    = ENV["RUBOTY_LINE_CHANNEL_MID"]    || ENV["LINE_CHANNEL_MID"]
+				config.channel_id     = ENV["RUBOTY_LINE_CHANNEL_ID"]
+				config.channel_secret = ENV["RUBOTY_LINE_CHANNEL_SECRET"]
+				config.channel_mid    = ENV["RUBOTY_LINE_CHANNEL_MID"]
  			}
 		end
 	end
