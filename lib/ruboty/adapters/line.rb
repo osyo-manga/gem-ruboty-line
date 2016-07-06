@@ -32,7 +32,7 @@ module Ruboty module Adapters
 			Ruboty.logger.info "======= LINE#say ======="
 
 			text = msg[:body]
-			to   = msg[:original][:message].from_mid
+			to   = msg[:to]
 
 			Ruboty.logger.info "text : #{text}"
 			Ruboty.logger.debug "to : #{to}"
@@ -79,7 +79,11 @@ module Ruboty module Adapters
 			Ruboty.logger.debug "content : #{msg.content}"
 
 			Thread.start {
-				robot.receive(body: msg.content[:text], message: msg)
+				robot.receive(
+					body: msg.content[:text],
+					from: msg.from_mid,
+					to:   msg.from_mid,
+					message: msg)
 			}
 		end
 
