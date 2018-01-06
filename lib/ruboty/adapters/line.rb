@@ -49,6 +49,12 @@ module Ruboty module Adapters
 				request = Rack::Request.new(env)
 				Ruboty.logger.debug "request : #{request}"
 
+				body = request.body.read
+				signature = env['HTTP_X_LINE_SIGNATURE']
+				unless client.validate_signature(body, signature)
+					error 400 do 'Bad Request' end
+				end
+
 				result = on_post request
 
 				[200, {"Content-Type" => "text/plain"}, [result]]
