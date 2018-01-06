@@ -2,20 +2,6 @@ require "rack"
 require 'line/bot'
 require 'rest-client'
 
-# module Line
-#   module Bot
-#     class HTTPClient
-#       def post(url, payload, header = {})
-#         Ruboty.logger.debug "======= HTTPClient#post ======="
-#         Ruboty.logger.debug "payload #{payload}"
-#         Ruboty.logger.debug "FIXIT_URL #{ENV["RUBOTY_FIXIE_URL"]}"
-#         RestClient.proxy = ENV["RUBOTY_FIXIE_URL"] if ENV["RUBOTY_FIXIE_URL"]
-#         RestClient.post(url, payload, header)
-#       end
-#     end
-#   end
-# end
-
 
 module Ruboty module Adapters
 	class LINE < Base
@@ -51,12 +37,6 @@ module Ruboty module Adapters
 
 				request = Rack::Request.new(env)
 				Ruboty.logger.debug "request : #{request}"
-
-# 				body = request.body.read
-# 				signature = env['HTTP_X_LINE_SIGNATURE']
-# 				unless client.validate_signature(body, signature)
-# 					 400 do 'Bad Request' end
-# 				end
 
 				result = on_post request
 
