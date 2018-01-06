@@ -69,7 +69,6 @@ module Ruboty module Adapters
 
 			body = request.body.read
 			Ruboty.logger.debug "request.body : #{body}"
-			return "OK"
 
 			events = client.parse_events_from(body)
 			
