@@ -63,6 +63,7 @@ module Ruboty module Adapters
 
 		def on_post request
 			Ruboty.logger.info "======= LINE#on_post ======="
+			Ruboty.logger.info "======= hogehoge ======="
 
 			return "OK" unless request.post? && request.fullpath == ENV["RUBOTY_LINE_ENDPOINT"]
 
