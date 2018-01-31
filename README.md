@@ -24,6 +24,11 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/osyo-m
 
 ## Release note
 
+#### 0.2.0
+  
+  * Support Message API
+  * Remove support LINE BOT API(Trial)
+
 #### 0.1.0
   
   * Release!
